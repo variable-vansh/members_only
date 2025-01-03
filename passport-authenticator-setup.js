@@ -4,6 +4,9 @@ const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require("bcryptjs");
 const pool = require('./db/pool'); // Import your pool from your database setup file
+const { body, validationResult } = require("express-validator");
+
+const baseController=require("./controllers/baseController")
 
 function passport_stuff(app){
     app.use(session({ secret: "cats", resave: false, saveUninitialized: false }));
@@ -70,25 +73,11 @@ function passport_stuff(app){
     });
 
     app.get("/", (req, res) => {
-        res.render("index", { user: req.user });
+        res.render("messageBoard", { user: req.user });
     });
     app.get("/sign-up", (req, res) => res.render("sign-up-form"));
 
-    app.post("/sign-up", async (req, res, next) => {
-        try {
-            const { username, password } = req.body;
-            const hashedPassword = await bcrypt.hash(password, 10);
-
-            await pool.query("INSERT INTO users (username, password) VALUES ($1, $2)", [
-                username,
-                hashedPassword,
-            ]);
-            res.redirect("/");
-        } catch(err) {
-            console.error(err);
-            next(err);
-        }
-    });
+    app.post("/sign-up",baseController.createUserPOST);
 }
 
 module.exports = passport_stuff;

@@ -1,0 +1,16 @@
+ id |  username   |                           password                           |    firstname     | lastname | membershipstatus 
+----+-------------+--------------------------------------------------------------+------------------+----------+------------------
+  1 | test        | $2a$10$4w7xGDn3nVeaOQHUycmqYO7tLz4oHVYNemYZvwxMYCTvO9JGRcVf2 |                  |          | 
+  2 | alright     | $2a$10$sTvG1GbiiE5UEz5voAgSRuxs7J3hAhr0lQC6obWpdZ0/nraVH.siq |                  |          | 
+  3 | nice        | $2a$10$lgoaMY2MdqXLVuyT.sDTfeBgmIugLaIK5Xvvb0w3LCfDvrUKiH4DC |                  |          | 
+  4 | test        | $2a$10$/KFMb7Ehv6UUg4T6J.2PVOur8za0FrTb2ZFQWMmxRUBs1Lr4OHvRe |                  |          | 
+  5 | pakoda      | $2a$10$CD5/EB8soVmshM.8y9CC9OBOhbWrGPAm3XAKNqiIkU3qwA2NVd3se |                  |          | 
+  6 | pakodasingh | $2a$10$0nO7V4WYCFp.K/OP3sR8zeH.WVN6dXRtPsqWGXjLjZ1.sAiuobQDG | vansh            |          | on
+  7 | pakodasingh | $2a$10$kI20mAwWsN0O505EDKTFhuqzg5VGGsDr5FtpI3dOCLs15VLYmjV66 | vansh            | mishra   | on
+  8 | right       | $2a$10$7dZnHiPGv/kn5FwZsqhL7OhVZahpvjcC9pnedMGHuPU3erZIOnRzG | fine             | good     | yes
+  9 | qwerty      | $2a$10$CSvEquwxzmKrFeiISfG/repDe8CpLK0THuifqg48mcCKIQmpy/a/2 | test1            | alrifht  | yes
+ 10 | check       | $2a$10$NgNluHC0QpTfPm.uiSMb7.9xm1gzeEQTCsVrSdtOqSgbXLXxLinva | alright          | mishra   | yes
+ 11 | vansh       | $2a$10$A0h8dmNlc89Ad1quiVw0m.QRq1wvTOav7AonemV/oycey.5Sgdvta | Vansh            | Mishra   | yes
+ 12 | nice        | $2a$10$L6YHlNSR6EwjPiHZMFLBHOgWT2GiLolgBl3ZvOXLehZ.Y3BaemS8e | this should work | yeah     | yes
+(12 rows)
+
