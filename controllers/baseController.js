@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 const pool = require('../db/pool'); // Import your pool from your database setup file
+const db=require("../db/queries")
 const { body, validationResult } = require("express-validator");
 
 const validateUser = [
@@ -42,3 +43,18 @@ exports.createUserPOST=[
             next(err);
         }
     }]
+
+exports.createMsgPOST= async (req, res)=>{
+  const {message, posterUsername}=req.body;
+  // console.log(message, posterUsername)
+  await(pool.query("INSERT INTO messages (username, message, time) VALUES ($1, $2, $3)",
+    [
+      posterUsername,
+      message,
+      new Date()
+    ]
+  ))
+
+  const allMsgs=await(db.getAllMessagesMember());
+  res.render("messageBoard", { user: req.user, messages: allMsgs });
+}

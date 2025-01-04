@@ -6,6 +6,8 @@ const bcrypt = require("bcryptjs");
 const pool = require('./db/pool'); // Import your pool from your database setup file
 const { body, validationResult } = require("express-validator");
 
+const db=require("./db/queries")
+
 const baseController=require("./controllers/baseController")
 
 function passport_stuff(app){
@@ -72,9 +74,11 @@ function passport_stuff(app){
         });
     });
 
-    app.get("/", (req, res) => {
-        res.render("messageBoard", { user: req.user });
+    app.get("/", async (req, res) => {
+          const allMsgs=await(db.getAllMessagesMember());
+        res.render("messageBoard", { user: req.user, messages: allMsgs });
     });
+
     app.get("/sign-up", (req, res) => res.render("sign-up-form"));
 
     app.post("/sign-up",baseController.createUserPOST);
