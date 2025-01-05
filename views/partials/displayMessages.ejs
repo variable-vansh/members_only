@@ -1,19 +1,16 @@
 <ul>
-    <% for (let message of messages) { %>
-        <li>
-    <% if (user) { %>
-            Author: <%= message.username %>
-            <br>
-            <% } %>
-    
-                message: <%= message.message %>
-                    <br>
-    <% if (user) { %>
-                    Time : <%= message.time %>
-                                            <br>
-
-                                <% } %>
-                     
-        </li>
-        <% } %>
+  <% for (let message of messages) { %>
+  <li>
+    <% if (user) { %> Author: <%= message.username %>
+    <br />
+    <% } %> message: <%= message.message %>
+    <br />
+    <% if (user) { %> Time : <%= message.time %>
+    <br />
+    <% } %> <% if (user && user.admin) { %> <%=console.log(message) %>
+    <a href="/delete/<%=message.id%>">Delete</a>
+    <br />
+    <% } %>
+  </li>
+  <% } %>
 </ul>

@@ -1,0 +1,17 @@
+<h1>Admin Veification</h1>
+
+<form action="/admin" method="post">
+  <label for="code">Enter secret code to get administrator privilege</label>
+  <input type="text" name="code" id="" />
+
+  <input
+    type="text"
+    name="username"
+    id=""
+    value="<%= username %>"
+    style="display: none"
+  />
+  <button type="submit">Submit</button>
+</form>
+
+<a href="/">Back</a>

@@ -1,31 +1,31 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title></title>
-</head>
+  </head>
 
-<body>
+  <body>
     <% if (locals.user) { %>
-        <h1>WELCOME TO THE MESSAGE BOARD, <%= user.username %></h1>
-        <a href="/log-out">LOG OUT</a>
-<% console.log(user) %>
-        <%- include("./partials/newMsg") %>
-            <%- include("./partials/displayMessages") %>
-                <% } else { %>
-<% console.log(user) %>
-                    <h1>please log in</h1>
-                    <form action="/log-in" method="POST">
-                        <label for="username">Username</label>
-                        <input id="username" name="username" placeholder="username" type="text" />
-                        <label for="password">Password</label>
-                        <input id="password" name="password" type="password" />
-                        <button>Log In</button>
-                    </form>
-                    <a href="/sign-up">sign-up</a>
-                                <%- include("./partials/displayMessages") %>
-
-                    <% } %>
-</body>
-
+    <h1>WELCOME TO THE MESSAGE BOARD, <%= user.username %></h1>
+    <% if(user.admin){ %>
+    <p>You are an admin</p>
+    <% }%> <% if(!user.admin){ %>
+    <a href="/admin/<%=user.username%>">Become an admin</a>
+    <% }%>
+    <a href="/log-out">LOG OUT</a>
+    <!-- <% console.log(user) %> -->
+    <%- include("./partials/newMsg") %> <%-
+    include("./partials/displayMessages") %> <% } else { %>
+    <!-- <% console.log(user) %> -->
+    <h1>please log in</h1>
+    <form action="/log-in" method="POST">
+      <label for="username">Username</label>
+      <input id="username" name="username" placeholder="username" type="text" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+      <button>Log In</button>
+    </form>
+    <a href="/sign-up">sign-up</a>
+    <%- include("./partials/displayMessages") %> <% } %>
+  </body>
 </html>

@@ -7,5 +7,5 @@ module.exports = new Pool({
   user: "vansh",
   database: "members_only",
   password: "qwerty",
-  port: 5432 // The default port
+  port: 5432, // The default port
 });

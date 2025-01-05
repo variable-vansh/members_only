@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Sign Up</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Sign Up</h1>
 
-     <%- include("partials/error.ejs") %>
+    <%- include("partials/error.ejs") %>
 
     <form action="/sign-up" method="POST">
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName">
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" />
 
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName">
+      <label for="lastName">Last Name</label>
+      <input type="text" name="lastName" />
 
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="username" type="text" />
+      <label for="username">Username</label>
+      <input id="username" name="username" placeholder="username" type="text" />
 
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" />
-        <label for="confirmPassword">Confirm Password</label>
-        <input id="confirmPassword" name="confirmPassword" type="password" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password" />
 
-        <br>
-        <label for="membershipStatus">Enter secret membership code:</label>
-        <input type="number" name="membershipStatus" id="secretCodeInput">
-        <button id="signupButton" disabled>Sign Up</button>
+      <br />
+      <label for="membershipStatus">Enter secret membership code:</label>
+      <input type="number" name="membershipStatus" id="secretCodeInput" />
+      <button id="signupButton" disabled>Sign Up</button>
     </form>
 
     <script>
-        let signupButton = document.getElementById("signupButton");
-        let secretCodeInput = document.getElementById("secretCodeInput");
+      let signupButton = document.getElementById("signupButton");
+      let secretCodeInput = document.getElementById("secretCodeInput");
 
-        secretCodeInput.addEventListener("input", function () {
-            if (secretCodeInput.value == 420) {
-                signupButton.disabled = false;
-            } else {
-                signupButton.disabled = true;
-            }
-        });
+      secretCodeInput.addEventListener("input", function () {
+        if (secretCodeInput.value == 420) {
+          signupButton.disabled = false;
+        } else {
+          signupButton.disabled = true;
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
