@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   username VARCHAR ( 255 ),
   password VARCHAR ( 255 ),
-  fristname VARCHAR ( 255 ),
+  firstname VARCHAR ( 255 ),
   lastname VARCHAR ( 255 ),
   membershipstatus VARCHAR ( 255 ),
   admin VARCHAR ( 255 )
