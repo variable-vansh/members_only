@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS messages (
   time VARCHAR ( 255 )
 );
 
+
 `;
 
 async function main() {
