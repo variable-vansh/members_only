@@ -27,7 +27,7 @@ async function main() {
   console.log("seeding...");
   const client = new Client({
     connectionString:
-      "postgresql://members_only_db_0iba_user:XVHZECJMEu7PgG6lyQ8KvwpLXOrtMqX5@dpg-cttarjjqf0us73eqjuk0-a.singapore-postgres.render.com/members_only_db_0iba?ssl=true",
+      "postgresql://members_only_psql_user:0U7ZnCKfQWiFEZihsHYQ14XwN63GXc8G@dpg-cv0rq9i3esus73aq5430-a.singapore-postgres.render.com/members_only_psql?ssl=true",
   });
   await client.connect();
   await client.query(SQL);

@@ -4,7 +4,6 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
 const pool = require("./db/pool"); // Import your pool from your database setup file
-const { body, validationResult } = require("express-validator");
 
 const db = require("./db/queries");
 

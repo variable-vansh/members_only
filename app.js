@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("node:path");
-const pool = require("./db/pool");
 const passport_stuff = require("./passport-authenticator-setup");
 
 const app = express();
